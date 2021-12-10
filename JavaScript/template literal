@@ -1,0 +1,38 @@
+let val1 = `Hello 
+            '"World`;
+let a = 'Laurence Svekis';
+val1 = `Hello ${a}`;
+val1 = `Adding ${5+10}`;
+val1 = `backtick \``;
+val1 = `Line 1
+        Line 2`;
+const b = 10;
+const c = 33;
+val1 = `${b} + ${c} = ${b+c}`;
+
+const first = 'Laurence';
+const last = 'Svekis';
+function fullName(greeting,fName,lName){
+    console.log(greeting);
+    console.log(fName,lName);
+    return `${greeting[0]} ${fName} ${lName}`;
+}
+val1 = fullName`Welcome${first}NEW${last}MIDDLE${last}END`;
+
+const game = {
+    level : 5,
+    name : 'Laurence'
+}
+
+function checker(output,user,level){
+    const statusVal = level > 3 ? 'pro' : 'beginner';
+    console.log(output);
+    return `${output[0]} : ${user} is a ${statusVal} at level "${level}"`;
+}
+
+val1 = checker`Player${game.name}A${game.level}B`;
+game.level = 2;
+val1 = checker`Player${game.name}${game.level}`;
+
+document.querySelector('.output').innerHTML = val1;
+console.log(val1);
