@@ -1,1 +1,57 @@
-Arrow
+((a)=>console.log(a))('Hello World');
+let val = 'test';
+
+const test1 = function (a,b,c){
+    return a + b + c;
+};
+const test2 = (a,b,c) => {
+    console.log(a);
+    return a + b + c;
+}
+const test3 = (a,b,c) => a + b + c;
+
+const test4 = a => a + 50 * 10; 
+
+const test5 = (c,a=10,b=20)=> a + b + c;
+
+val = test1(5,10,15);
+val = test2(5,10,15);
+val = test3(5,10,15);
+val = test4(5);
+val = test5(50);
+
+const myObj = {
+    a : 5,
+    b : () => console.log('Hello'),
+    c : function() {
+        console.log(this);
+    },
+    d : () => console.log(this)
+}
+
+myObj.b();
+myObj.c();
+myObj.d();
+
+const output = document.querySelector('.output');
+output.addEventListener('click',(e)=>{
+    console.log('clicked');
+})
+output.addEventListener('click',function(e){
+    console.log('click 2');
+})
+
+console.log(val);
+output.innerHTML = val;
+console.clear();
+const arr = [1,2,3,4,5];
+const temp = arr.reduce((a,b)=>a+b);
+console.log(temp);
+
+const temp1 = arr.filter(a => a > 2);
+console.log(temp1);
+
+const temp2 = arr.map(a => a*2);
+console.log(temp2);
+
+
