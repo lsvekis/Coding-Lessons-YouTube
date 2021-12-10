@@ -1,0 +1,52 @@
+let myStr = "Output String";
+const myObj = {prop1:"Value 1",prop2:"Value 2"}
+const myArr = ["one","two","three","four"];
+const val = myObj;
+console.group("logging");
+
+logger('log','blue');
+console.log(val);
+logger('error','Red');
+console.error(myArr);
+logger('dir','green');
+console.dir(document);
+//console.clear();
+for(let i=0;i<10;i++){
+    logger('count','purple');
+    console.count("test");
+}
+console.count("test");
+//console.clear();
+logger('info','pink');
+console.info(val);
+logger('warn','blue');
+console.warn(val);
+
+logger('table','green');
+console.table(myStr);
+console.table(myObj);
+console.table(myArr);
+console.table([myArr,myObj,myArr]);
+
+//console.clear();
+
+console.time('test1');
+console.time();
+let x = 0;
+while (x <50000) {x++}
+console.timeEnd();
+console.timeEnd('test1');
+
+//console.clear();
+console.group();
+console.log("one");
+console.log("two");
+console.log("three");
+console.groupEnd();
+
+console.groupEnd("logging");
+
+function logger(met,bg){
+    //console.count("test");
+    console.log(`%c CONSOLE Method ${met.toUpperCase()} `,`background:${bg};color:white`);
+}
